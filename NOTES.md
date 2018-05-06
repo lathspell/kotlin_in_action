@@ -4,6 +4,13 @@ Links
 Language
 ========
 
+Variables
+---------
+* `var` declares a mutable variable
+* `val` declares an immutable variable
+* the variable type can usually be inferred
+* variables can be used inside strings using "string templates" like `"Hello $name!"`
+
 Naming
 ------
 * Public classes do not need to be in a file with the same name
@@ -49,3 +56,24 @@ Ranges
 * The range operator ".." can be used to create an IntRange which is a subtype of IntProgression
 * An expression like "10 downTo 1 step 2" can be used to create other "progressions"
 * As e.g. IntProgression is a class ".map {}" can be used directly without a for loop
+
+Exceptions
+----------
+* No difference between "checked" and "unchecked" exceptions!
+* "try" is, of course, an expression and not a statement, as well
+
+Expressions
+-----------
+* Most Java statements like "if", "for", "switch" have Kotlin counterparts that are 
+  expressions and yield a result. In this case no "return" is written, the result is
+  the last statement.
+
+Standard Library
+================
+
+Collections
+-----------
+* Quick creation using `listOf()` and `mapOf(Pair())` or `arrayListOf()`, `hashmapOf()` 
+* Map to List using `.map()`
+* List to Map using `.associate(Pair(it, ...))`
+* List to String using `.joinToString(sep)`

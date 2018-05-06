@@ -43,3 +43,9 @@ Casting
 * Type check is done via "a is B", not "instanceOf"
 * Type casting is done via "a as B", not "(B)a"
 * Once casted or checkd the compiler will remember and members are accessible from there on!
+
+Ranges
+------
+* The range operator ".." can be used to create an IntRange which is a subtype of IntProgression
+* An expression like "10 downTo 1 step 2" can be used to create other "progressions"
+* As e.g. IntProgression is a class ".map {}" can be used directly without a for loop

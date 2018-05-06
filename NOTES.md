@@ -32,3 +32,8 @@ class MyClass {
 
 val instance = MyClass.create()
 ```
+
+Reflection
+----------
+* Referring to the class like ".class" via the "class literal" operator "::",
+  e.g. `Exception::class`

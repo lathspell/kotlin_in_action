@@ -27,5 +27,15 @@ enum class Color {
                     setOf(BLUE, VIOLET) -> INDIGO
                     else -> throw Exception("Dirty color!")
                 }
+
+        fun mixOptimized(c1: Color, c2: Color) : Color {
+            val s = setOf(c1, c2).sorted() // avoid error prune OR-comparison
+            return when {
+                (c1 == RED && c2 == YELLOW) || (c1 == YELLOW && c2 == RED) -> ORANGE
+                (c1 == YELLOW && c2 == BLUE) || (c1 == BLUE && c2 == YELLOW) -> GREEN
+                (s[0] == BLUE && s[1] == VIOLET) -> INDIGO
+                else -> throw Exception("Dirty color!")
+            }
+        }
     }
 }

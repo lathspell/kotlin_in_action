@@ -37,3 +37,9 @@ Reflection
 ----------
 * Referring to the class like ".class" via the "class literal" operator "::",
   e.g. `Exception::class`
+
+Casting
+-------
+* Type check is done via "a is B", not "instanceOf"
+* Type casting is done via "a as B", not "(B)a"
+* Once casted or checkd the compiler will remember and members are accessible from there on!

@@ -68,6 +68,14 @@ Expressions
   expressions and yield a result. In this case no "return" is written, the result is
   the last statement.
 
+Functions
+---------
+* function arguments can be named like `sin(x = 3)`
+* default values to arguments can be specified like `foo(a: Int = 4)`
+* `@JvmOverloads` generates additional methods that use the default values when called from Java 
+* Extension functions are not automatically globally available but must be imported
+* imported functions can be aliased like `import foo.bar as baz` 
+
 Standard Library
 ================
 
@@ -77,3 +85,5 @@ Collections
 * Map to List using `.map()`
 * List to Map using `.associate(Pair(it, ...))`
 * List to String using `.joinToString(sep)`
+* Pairs can be created using the infix operator "to": `"a" to 1` is `Pair("a", 1)`
+  

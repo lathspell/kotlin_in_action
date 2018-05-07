@@ -1,6 +1,6 @@
 package book.chapter1
 
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 data class Person(val name: String, val age: Int? = null)

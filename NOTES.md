@@ -76,6 +76,14 @@ Functions
 * Extension functions are not automatically globally available but must be imported
 * imported functions can be aliased like `import foo.bar as baz` 
 
+Deconstructuring Declarations
+-----------------------------
+* Pairs and other tupel like data can be immediately splitted into multiple variables when 
+  assigning. Kotlin supports this for all types who follows the convention to have functions 
+  with names like `componentX()`. Example: `val (a, b, c) = createTriple()`
+* `data class` automatically generates `componentX()` functions.
+* The Kotlin standard library adds componentX() extension functions for Map.Entry   
+
 Standard Library
 ================
 

@@ -16,11 +16,15 @@ Naming
 * Public classes do not need to be in a file with the same name
 * Packages do not need to be in corresponding directories although that's recommended
 
-Visibility
-----------
+Visibility and Access
+---------------------
 * See <https://kotlinlang.org/docs/reference/visibility-modifiers.html>
 * default is "public"
 * there is no "package level", only "internal" for access within the same Kotlin module
+* Classes and methods are "final public" by default. `open` is needed to subclass them,
+  `override` to override them (to avoid accidentally hiding a method)
+* Inner classes are by default Static Inner Classes. Only if marked as `inner class` they
+  may access their outer instance using `this@Outer`. 
 
 Compagnion Object
 -----------------
@@ -83,6 +87,12 @@ Deconstructuring Declarations
   with names like `componentX()`. Example: `val (a, b, c) = createTriple()`
 * `data class` automatically generates `componentX()` functions.
 * The Kotlin standard library adds componentX() extension functions for Map.Entry   
+
+Constructors
+------------
+* "Primary Constructors" like `class Foo(val a : Int, b : Int)` are part of the class
+  declaration. The keyword "constructor" as in `class Foo constructor(a: Int)` is optional.
+* "Secondary Constructors" are written like Java constructors and can have a method body.
 
 Standard Library
 ================

@@ -26,6 +26,11 @@ Visibility and Access
 * Inner classes are by default Static Inner Classes. Only if marked as `inner class` they
   may access their outer instance using `this@Outer`. 
 
+Objects
+-------
+
+* The "object" keyword creates a single instance of a class. A singleton. 
+
 Compagnion Object
 -----------------
 
@@ -93,9 +98,19 @@ Constructors
 * "Primary Constructors" like `class Foo(val a : Int, b : Int)` are part of the class
   declaration. The keyword "constructor" as in `class Foo constructor(a: Int)` is optional.
 * "Secondary Constructors" are written like Java constructors and can have a method body.
+* There are "init" blocks just like in Java
 
 Standard Library
 ================
+
+toString/equals/hash
+--------------------
+* The `toString()` method works just like in Java
+* The `equals()` method is required to compare the object's values and not the references
+* The `==` operator calls `equals()`
+* Strings can thus be compared using `==` and not only using `.equals()` like in Java
+* The `hashCode()` method is required to return the same code if the objects are the
+  same according to `equals()`
 
 Collections
 -----------

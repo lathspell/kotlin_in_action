@@ -128,3 +128,10 @@ Sequences
   platforms (like e.g. Android)
 * Seem to be a special case datatype, list/map are for general use.
 * Created with `list.asSequence()`, ended with `sequence.toList()`
+
+apply/with/buildString
+----------------------
+* `with` is a function that applies a code block to a variable
+* `apply` is like `with` but also returns the result 
+* `buildString()` is a nice Kotlin standard library method to build strings 
+  using StringBuilder and with().

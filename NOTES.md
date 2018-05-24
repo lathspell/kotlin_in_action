@@ -119,4 +119,12 @@ Collections
 * List to Map using `.associate(Pair(it, ...))`
 * List to String using `.joinToString(sep)`
 * Pairs can be created using the infix operator "to": `"a" to 1` is `Pair("a", 1)`
-  
+ 
+Sequences
+---------
+* Behave just like collections but are optimized for working with large data as they
+  do not create temporary lists for every filter/map operation.
+* Similar to Java 8 Streams and created as those were not available for all Kotlin
+  platforms (like e.g. Android)
+* Seem to be a special case datatype, list/map are for general use.
+* Created with `list.asSequence()`, ended with `sequence.toList()`

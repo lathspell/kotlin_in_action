@@ -11,6 +11,13 @@ Variables
 * the variable type can usually be inferred
 * variables can be used inside strings using "string templates" like `"Hello $name!"`
 
+Special Classes
+---------------
+* Unit corresponds to Java "void" and is used to signify that a function does not return anything.
+  It is implemented as a singleton object though and not as a language construct.
+* Nothing is class with a private constructor and used to mark classes that will always 
+  return with an Exception as it is impossible to create an instance of Nothing for "return". 
+
 Naming
 ------
 * Public classes do not need to be in a file with the same name
@@ -114,11 +121,16 @@ toString/equals/hash
 
 Collections
 -----------
-* Quick creation using `listOf()` and `mapOf(Pair())` or `arrayListOf()`, `hashmapOf()` 
+* Quick creation using `arrayOf`, `listOf()` and `mapOf(Pair())` or `arrayListOf()`, `hashmapOf()` 
 * Map to List using `.map()`
 * List to Map using `.associate(Pair(it, ...))`
 * List to String using `.joinToString(sep)`
 * Pairs can be created using the infix operator "to": `"a" to 1` is `Pair("a", 1)`
+* Every Kotlin collection is implemented using a Java Collection type. Kotlin Array is a Java Array.
+* For every Kotlin collection type there are two interfaces, Collection/Map/Set is read only and
+  MutableCollection,MutableMap,MutableSet is extended with write access methods.
+  (read only does not mean immutable, other references to the same object maybe of a mutable type)
+* The "spread operator" turns a Array into multiple individual method parameters: `myfunc(*params)`
  
 Sequences
 ---------

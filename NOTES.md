@@ -107,6 +107,14 @@ Constructors
 * "Secondary Constructors" are written like Java constructors and can have a method body.
 * There are "init" blocks just like in Java
 
+Operator Overloading
+--------------------
+* In Kotlin "a + b" is the same as "a.plus(b)" therefore operator overloading archived by just 
+  adding a function with the correct signature to a class.
+* Operator groups are among others: unary (+,-,!,--x,x--,++x,x++), binary (+,-,/,%,*), compount assignment (+=,-=)
+* Comparison operators (=,!=,<,<=,=>,>) can be overloaded as well
+* Kotlin can compare not only primitive types as Java but also objects. So no more explicit `.equals()`
+
 Standard Library
 ================
 

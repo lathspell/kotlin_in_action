@@ -115,6 +115,10 @@ Operator Overloading
 * Comparison operators (=,!=,<,<=,=>,>) can be overloaded as well
 * Kotlin can compare not only primitive types as Java but also objects. So no more explicit `.equals()`
 
+Lambdas
+-------
+* `return` inside a lambda means exiting the function that called the lambda
+
 Standard Library
 ================
 

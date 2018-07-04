@@ -64,4 +64,26 @@ class LambdaTest {
         assertEquals(2, return2OrNull(listOf(1, 2, 3)))
         assertNull(return2OrNull(listOf(1, 3)))
     }
+
+    @Test
+    fun testReturnLabel() {
+        var list = ArrayList<Int>()
+        (10..12).forEach mylabel@{
+            if (it == 11) return@mylabel // would return the lambda function but now acts like `continue`
+            list.add(it)
+        }
+
+        assertEquals(listOf(10, 12), list)
+    }
+
+    @Test
+    fun testReturnLabel2() {
+        var list = ArrayList<Int>()
+        (10..12).forEach {
+            if (it == 11) return@forEach // returns to the function name `foreach`
+            list.add(it)
+        }
+
+        assertEquals(listOf(10, 12), list)
+    }
 }

@@ -119,6 +119,11 @@ Lambdas
 -------
 * `return` inside a lambda means exiting the function that called the lambda
 
+Generics
+--------
+* Kotlin does not have raw types like `List` without a type parameter in Java. The type of e.g. the elements
+  of a list must either be inferable or specified explicitly.  
+
 Standard Library
 ================
 

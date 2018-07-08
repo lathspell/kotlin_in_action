@@ -1,8 +1,8 @@
 package book.chapter10
 
 import org.junit.Rule
+import org.junit.Test
 import org.junit.rules.TemporaryFolder
-import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class AnnotationsTest1 {

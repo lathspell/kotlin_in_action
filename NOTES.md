@@ -118,6 +118,10 @@ Operator Overloading
 Lambdas
 -------
 * `return` inside a lambda means exiting the function that called the lambda
+* If a function parameter is declared as Lambda that looks like an Extension Function then its a a 
+  "Lambda with Receiver": `fun buildString(f : StringBuilder.() : Unit) ...` When calling the outer
+  function the Lambda can be shortened as the magic variable "it" does not have to be used:
+  `buildString { append("Hello") }`. 
 
 Generics
 --------

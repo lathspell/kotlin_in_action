@@ -2,7 +2,6 @@ package book.chapter10
 
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.memberProperties
-import kotlin.test.Test
 import kotlin.test.assertNotNull
 
 class AnnotationsTest2 {
@@ -11,14 +10,14 @@ class AnnotationsTest2 {
     //@Target(AnnotationTarget.FIELD)
     annotation class SpecialTreatment(val reason: String)
 
-    data class Person(
+    data class AnnoPerson(
             val name: String,
             @SpecialTreatment("privacy")
             val yob: Int)
 
-    @Test
+    @org.junit.Test
     fun testSpecialTreatmentAnnotation() {
-        val p1 = Person("Tim", 1930)
+        val p1 = AnnoPerson("Tim", 1930)
 
         val yobProp = p1::class.memberProperties.first { it.name == "yob" }
         assertNotNull(yobProp)

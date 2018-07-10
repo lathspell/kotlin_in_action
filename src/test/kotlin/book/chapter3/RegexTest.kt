@@ -9,6 +9,7 @@ class RegexTest {
     @Test
     fun testTripleQuotedString() {
         val input = "0.4"
-        assertTrue(input.matches("""0\.""".toRegex()))
+        assertTrue(input.matches("0\\.\\d+".toRegex()))
+        assertTrue(input.matches("""0\.\d+""".toRegex()))
     }
 }

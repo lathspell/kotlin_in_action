@@ -35,7 +35,7 @@ class WithAndApplyTest {
         val result = StringBuilder()
 
         with(receiver = result, block = {
-            for (letter in 'A'..'F') append("A")
+            for (letter in 'A'..'F') append(letter)
         })
 
         assertEquals("ABCDEF", result.toString())
@@ -46,7 +46,7 @@ class WithAndApplyTest {
         val result = StringBuilder()
 
         val appendAF = fun(sb: StringBuilder) {
-            for (letter in 'A'..'F') sb.append("A")
+            for (letter in 'A'..'F') sb.append(letter)
         }
 
         with(receiver = result, block = appendAF)
@@ -69,6 +69,6 @@ class WithAndApplyTest {
         val result = StringBuilder().apply {
             for (letter in 'A'..'F') append(letter)
         }.toString()
-        assertEquals("AB", result)
+        assertEquals("ABCDEF", result)
     }
 }

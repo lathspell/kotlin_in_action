@@ -1,6 +1,7 @@
 package book.chapter4
 
 import kotlin.test.Test
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class EqualsTest {
@@ -8,15 +9,20 @@ class EqualsTest {
     class Person1(val name: String)
 
     class Person2(val name: String) {
-        fun equals(that: Person2): Boolean {
-            return this.name == that.name
+        override fun equals(that: Any?): Boolean {
+            return that !== null
+                    && that is Person2
+                    && this.name == that.name
         }
     }
 
+    data class Person3(val name: String) // overwrites equals()
+
     @Test
     fun testEqualsMethod() {
-        assertTrue(Person1("foo") == Person1("foo"))
-        assertTrue(Person2("foo") == Person2("foo"))
+        assertFalse(Person1("foo") == Person1("foo")) // uses Object.equals()
+        assertTrue(Person2("foo") == Person2("foo")) // uses overridden Person2.equals()
+        assertTrue(Person3("foo") == Person3("foo")) // uses overridden Data Class .euquals()
     }
 
     @Test

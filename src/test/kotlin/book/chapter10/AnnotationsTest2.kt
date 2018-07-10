@@ -2,12 +2,13 @@ package book.chapter10
 
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.memberProperties
+import kotlin.test.Test
 import kotlin.test.assertNotNull
 
 class AnnotationsTest2 {
 
-    //@Retention(AnnotationRetention.RUNTIME)
-    //@Target(AnnotationTarget.FIELD)
+    @Retention(AnnotationRetention.RUNTIME)
+    @Target(AnnotationTarget.PROPERTY)
     annotation class SpecialTreatment(val reason: String)
 
     data class AnnoPerson(
@@ -15,7 +16,7 @@ class AnnotationsTest2 {
             @SpecialTreatment("privacy")
             val yob: Int)
 
-    @org.junit.Test
+    @Test
     fun testSpecialTreatmentAnnotation() {
         val p1 = AnnoPerson("Tim", 1930)
 
